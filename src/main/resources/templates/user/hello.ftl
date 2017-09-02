@@ -62,7 +62,7 @@
             </div>
         </form>
         <hr>
-        <p>© 2017 Wanghaoran.</p>
+        <p>© 2017.09.02 Wanghaoran.</p>
     </div>
 </div>
 <#include "../common.ftl">
