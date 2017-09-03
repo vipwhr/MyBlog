@@ -18,6 +18,7 @@ public class ArticleServiceImpl implements ArticleService{
         Article param = new Article();
         param.setStart((pageNumber-1)*pageSize);
         param.setRows(pageSize);
+        param.setTitle(title);
         return articleDao.getArticle(param);
     }
 }

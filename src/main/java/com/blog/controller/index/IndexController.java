@@ -23,7 +23,7 @@ public class IndexController {
     @RequestMapping(value = "/index",method = RequestMethod.GET)
     public String index(Model model){
         List<Article> articleList = articleService.getArticle(1,10,null);
-        model.addAttribute("articleLength",articleList.size());
+        model.addAttribute("articleList",articleList);
         return "index" ;
     }
 

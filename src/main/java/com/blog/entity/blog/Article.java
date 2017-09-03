@@ -8,12 +8,24 @@ public class Article extends PageEntity{
 
     private long id;
     private String title;
+    private String foreword;
     private String content;
     private Timestamp ctime;
     private long creater;
     private Timestamp mtime;
     private long updater;
     private int isvalid;
+
+    //非数据库字段
+    private String createrName;
+
+    public String getCreaterName() {
+        return createrName;
+    }
+
+    public void setCreaterName(String createrName) {
+        this.createrName = createrName;
+    }
 
     public long getId() {
         return id;
@@ -29,6 +41,14 @@ public class Article extends PageEntity{
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getForeword() {
+        return foreword;
+    }
+
+    public void setForeword(String foreword) {
+        this.foreword = foreword;
     }
 
     public String getContent() {

@@ -3,10 +3,17 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.blog.dao.blog.ArticleDao">
-    <select id="getArticle" parameterType="com.blog.entity.blog.Article" resultType="java.util.List">
-        select * from blog_article WHERE isvalid = 1
-        <if test="title != null and title != ''">
-            AND title like CONCAT('%','#{title}','%' )
+    <select id="getArticle" parameterType="com.blog.entity.blog.Article" resultType="com.blog.entity.blog.Article">
+        select article.id as id,
+        article.title as title,
+        article.foreword as foreword,
+        article.ctime as ctime,
+        user.name as createrName
+        from blog_article article
+        LEFT JOIN sys_user user on user.id = article.creater
+        WHERE article.isvalid = 1
+        <if test="title != null and title != '' ">
+            AND article.title like CONCAT('%','#{title}','%' )
         </if>
         limit #{rows} offset #{start}
 
