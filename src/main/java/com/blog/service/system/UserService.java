@@ -1,6 +1,6 @@
-package com.blog.service;
+package com.blog.service.system;
 
-import com.blog.entity.User;
+import com.blog.entity.system.User;
 
 public interface UserService {
 

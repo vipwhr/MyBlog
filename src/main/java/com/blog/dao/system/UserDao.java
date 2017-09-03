@@ -1,6 +1,6 @@
-package com.blog.dao;
+package com.blog.dao.system;
 
-import com.blog.entity.User;
+import com.blog.entity.system.User;
 import org.springframework.stereotype.Repository;
 
 @Repository

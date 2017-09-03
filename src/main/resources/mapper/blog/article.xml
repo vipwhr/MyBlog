@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.blog.dao.blog.ArticleDao">
+    <select id="getArticle" parameterType="com.blog.entity.blog.Article" resultType="java.util.List">
+        select * from blog_article WHERE isvalid = 1
+        <if test="title != null and title != ''">
+            AND title like CONCAT('%','#{title}','%' )
+        </if>
+        limit #{rows} offset #{start}
+
+    </select>
+
+</mapper>

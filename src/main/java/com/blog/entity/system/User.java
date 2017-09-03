@@ -1,4 +1,4 @@
-package com.blog.entity;
+package com.blog.entity.system;
 
 public class User {
 
