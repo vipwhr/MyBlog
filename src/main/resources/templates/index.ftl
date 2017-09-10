@@ -9,6 +9,9 @@
   <link rel="icon" type="image/png" href="assets/i/favicon.png">
   <link rel="stylesheet" href="assets/css/amazeui.min.css">
   <link rel="stylesheet" href="assets/css/app.css">
+    <script>
+        var ctx = "${request.contextPath}";
+    </script>
 </head>
 
 <body id="blog">
@@ -60,7 +63,7 @@
                 <img src="assets/i/b${article_index + 1}.jpg">
                 <div class="blog-slider-desc am-slider-desc ">
                     <div class="blog-text-center blog-slider-con">
-                        <h1 class="blog-h-margin"><a href="">${article.title}</a></h1>
+                        <h1 class="blog-h-margin"><a href="javascript:void" onclick="articleInfo(${article.id})">${article.title}</a></h1>
                         <p>${article.foreword}</p>
                         <span>${article.ctime}</span>
                         <br><br><br><br><br><br><br>
@@ -86,7 +89,7 @@
                     <span><a href="" class="blog-color">Article &nbsp;</a></span>
                     <span> @${article.createrName} &nbsp;</span>
                     <span>${article.ctime}</span>
-                    <h1><a href="">${article.title}</a></h1>
+                    <h1><a href="javascript:void" onclick="articleInfo(${article.id})">${article.title}</a></h1>
                     <p>${article.foreword}
                     </p>
                     <p><a href="" class="blog-continue">continue reading</a></p>
@@ -107,6 +110,6 @@
 <script src="assets/js/amazeui.ie8polyfill.min.js"></script>
 <![endif]-->
 <script src="assets/js/amazeui.min.js"></script>
-<!-- <script src="assets/js/app.js"></script> -->
+<script src="${request.contextPath}/project/blog/index.js"></script>
 </body>
 </html>
