@@ -1,7 +1,7 @@
 package com.blog.controller.index;
 
-import com.blog.entity.blog.Article;
-import com.blog.service.blog.ArticleService;
+import com.blog.entity.blog.Blog;
+import com.blog.service.blog.BlogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,11 +18,11 @@ import java.util.List;
 public class IndexController {
 
     @Autowired
-    private ArticleService articleService;
+    private BlogService blogService;
 
     @RequestMapping(value = "/index",method = RequestMethod.GET)
     public String index(Model model){
-        List<Article> articleList = articleService.getArticle(1,10,null);
+        List<Blog> articleList = blogService.getBlog(1,10,null);
         model.addAttribute("articleList",articleList);
         return "index" ;
     }

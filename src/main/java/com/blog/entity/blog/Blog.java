@@ -4,9 +4,9 @@ import com.blog.entity.PageEntity;
 
 import java.sql.Timestamp;
 
-public class Article extends PageEntity{
+public class Blog extends PageEntity{
 
-    private long id;
+    private int id;
     private String title;
     private String foreword;
     private String content;
@@ -27,11 +27,11 @@ public class Article extends PageEntity{
         this.createrName = createrName;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
