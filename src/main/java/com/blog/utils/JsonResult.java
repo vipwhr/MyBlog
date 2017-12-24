@@ -1,5 +1,8 @@
 package com.blog.utils;
 
+import lombok.Data;
+
+@Data
 public class JsonResult {
 
     private int status;
@@ -12,27 +15,4 @@ public class JsonResult {
         this.rows = rows;
     }
 
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public Object getRows() {
-        return rows;
-    }
-
-    public void setRows(Object rows) {
-        this.rows = rows;
-    }
 }
