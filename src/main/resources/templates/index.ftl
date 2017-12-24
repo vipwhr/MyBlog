@@ -18,7 +18,7 @@
 
 <header class="am-g am-g-fixed blog-fixed blog-text-center blog-header">
     <div class="am-u-sm-8 am-u-sm-centered">
-        <img width="200" src="${request.contextPath}assets/i/favicon.png" alt="Amaze UI Logo"/>
+        <img width="100" src="${request.contextPath}assets/i/favicon.png" alt="Amaze UI Logo"/>
         <h2 class="am-hide-sm-only">Adrian BLOG</h2>
     </div>
 </header>
