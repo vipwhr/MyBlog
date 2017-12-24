@@ -1,7 +1,7 @@
 package com.blog.service.blog.impl;
 
 import com.blog.dao.blog.BlogDao;
-import com.blog.entity.blog.Blog;
+import com.blog.entity.blog.BlogEntity;
 import com.blog.service.blog.BlogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,8 +14,8 @@ public class BlogServiceImpl implements BlogService {
     private BlogDao blogDao;
 
     @Override
-    public List<Blog> getBlog(int pageNumber, int pageSize, String title) {
-        Blog param = new Blog();
+    public List<BlogEntity> getBlog(int pageNumber, int pageSize, String title) {
+        BlogEntity param = new BlogEntity();
         param.setStart((pageNumber-1)*pageSize);
         param.setRows(pageSize);
         param.setTitle(title);
@@ -23,8 +23,8 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public Blog getBlogById(int blogId) {
-        Blog param = new Blog();
+    public BlogEntity getBlogById(int blogId) {
+        BlogEntity param = new BlogEntity();
         param.setId(blogId);
         return blogDao.getBlogById(param);
     }

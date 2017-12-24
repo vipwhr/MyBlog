@@ -1,6 +1,6 @@
 package com.blog.service.blog;
 
-import com.blog.entity.blog.Blog;
+import com.blog.entity.blog.BlogEntity;
 
 import java.util.List;
 
@@ -13,13 +13,13 @@ public interface BlogService {
      * @param title
      * @return
      */
-    List<Blog> getBlog(int pageNumber,int pageSize,String title);
+    List<BlogEntity> getBlog(int pageNumber, int pageSize, String title);
 
     /**
      * 根据blog id获取详细的信息
      * @param blogId
      * @return
      */
-    Blog getBlogById(int blogId);
+    BlogEntity getBlogById(int blogId);
 
 }

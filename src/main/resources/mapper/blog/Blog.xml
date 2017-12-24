@@ -5,7 +5,7 @@
 <mapper namespace="com.blog.dao.blog.BlogDao">
 
     <!-- 分页模糊查询文章列表 -->
-    <select id="getBlog" parameterType="com.blog.entity.blog.Blog" resultType="com.blog.entity.blog.Blog">
+    <select id="getBlog" parameterType="com.blog.entity.blog.BlogEntity" resultType="com.blog.entity.blog.BlogEntity">
         select article.id as id,
         article.title as title,
         article.foreword as foreword,
@@ -22,7 +22,7 @@
     </select>
 
     <!-- 根据文章id获取文章详细的信息 -->
-    <select id="getBlogById" parameterType="com.blog.entity.blog.Blog" resultType="com.blog.entity.blog.Blog">
+    <select id="getBlogById" parameterType="com.blog.entity.blog.BlogEntity" resultType="com.blog.entity.blog.BlogEntity">
         select article.id as id,
         article.title as title,
         article.foreword as foreword,

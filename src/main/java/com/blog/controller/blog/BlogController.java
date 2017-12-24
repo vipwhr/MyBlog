@@ -1,6 +1,6 @@
 package com.blog.controller.blog;
 
-import com.blog.entity.blog.Blog;
+import com.blog.entity.blog.BlogEntity;
 import com.blog.entity.blog.BlogComment;
 import com.blog.service.blog.BlogCommentService;
 import com.blog.service.blog.BlogService;
@@ -8,7 +8,6 @@ import com.blog.utils.JsonResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -28,7 +27,7 @@ public class BlogController {
 
     @RequestMapping(value = "/blog/detail",method = RequestMethod.GET)
     public String blogDetail(Model model, int blogId){
-        Blog blog = blogService.getBlogById(blogId);
+        BlogEntity blog = blogService.getBlogById(blogId);
         model.addAttribute("blog",blog);
         return "blog/article";
     }

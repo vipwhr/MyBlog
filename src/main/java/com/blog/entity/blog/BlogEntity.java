@@ -4,7 +4,7 @@ import com.blog.entity.PageEntity;
 
 import java.sql.Timestamp;
 
-public class Blog extends PageEntity{
+public class BlogEntity extends PageEntity{
 
     private int id;
     private String title;

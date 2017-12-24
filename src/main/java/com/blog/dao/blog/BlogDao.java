@@ -1,6 +1,6 @@
 package com.blog.dao.blog;
 
-import com.blog.entity.blog.Blog;
+import com.blog.entity.blog.BlogEntity;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,12 +12,12 @@ public interface BlogDao {
      * @param param
      * @return
      */
-    List<Blog> getBlog(Blog param);
+    List<BlogEntity> getBlog(BlogEntity param);
 
     /**
      * 根据文章id获取文章详细信息
      * @param blogId
      * @return
      */
-    Blog getBlogById(Blog param);
+    BlogEntity getBlogById(BlogEntity param);
 }
