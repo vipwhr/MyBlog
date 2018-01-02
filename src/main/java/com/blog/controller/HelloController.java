@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 public class HelloController {
 
@@ -17,7 +19,7 @@ public class HelloController {
     private UserService userService;
 
     @RequestMapping(value = "/hello",method = RequestMethod.GET)
-    public String hello(){
+    public String hello(HttpServletRequest request){
         return "/user/hello";
     }
 

@@ -5,12 +5,17 @@
 <mapper namespace="com.blog.dao.blog.BlogDao">
 
     <!-- 分页模糊查询文章列表 -->
-    <select id="getBlog" parameterType="com.blog.entity.blog.BlogEntity" resultType="com.blog.entity.blog.BlogEntity">
+    <select id="page" parameterType="com.blog.entity.blog.BlogEntity" resultType="com.blog.entity.blog.BlogEntity">
         select article.id as id,
         article.title as title,
         article.foreword as foreword,
         article.ctime as ctime,
-        user.name as createrName
+        user.name as createrName,
+        (select count(1) from blog_article article where isvalid = 1
+        <if test="title != null and title != '' ">
+            AND title like CONCAT('%','#{title}','%' )
+        </if>
+        ) as total
         from blog_article article
         LEFT JOIN sys_user user on user.id = article.creater
         WHERE article.isvalid = 1

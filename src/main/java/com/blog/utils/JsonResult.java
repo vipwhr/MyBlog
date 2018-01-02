@@ -9,6 +9,9 @@ public class JsonResult {
     private String message;
     private Object rows;
 
+    public static JsonResult SUCCESS_RESULT = new JsonResult(1,"SUCCESS",null);
+    public static JsonResult FAIL_RESULT = new JsonResult(-1,"FAIL",null);
+
     public JsonResult(int status,String message,Object rows){
         this.status = status;
         this.message = message;

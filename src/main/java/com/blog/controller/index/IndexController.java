@@ -1,5 +1,6 @@
 package com.blog.controller.index;
 
+import com.blog.config.Constant;
 import com.blog.entity.blog.BlogEntity;
 import com.blog.service.blog.BlogService;
 import lombok.extern.slf4j.Slf4j;
@@ -30,7 +31,7 @@ public class IndexController {
 
     @RequestMapping(value = "/index",method = RequestMethod.GET)
     public String index(Model model){
-        List<BlogEntity> articleList = blogService.getBlog(1,10,null);
+        List<BlogEntity> articleList = blogService.getBlog(Constant.SUCCESS,Constant.PAGE_SIZE,null);
         model.addAttribute("articleList",articleList);
         return "index" ;
     }

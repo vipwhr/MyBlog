@@ -12,7 +12,7 @@ public interface BlogDao {
      * @param param
      * @return
      */
-    List<BlogEntity> getBlog(BlogEntity param);
+    List<BlogEntity> page(BlogEntity param);
 
     /**
      * 根据文章id获取文章详细信息

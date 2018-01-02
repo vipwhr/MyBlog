@@ -1,5 +1,8 @@
 package com.blog.entity;
 
+import lombok.Data;
+
+@Data
 public class PageEntity {
 
     //查询第几页
@@ -10,36 +13,9 @@ public class PageEntity {
     private int start;
     //需要查询多少行
     private int rows;
+    //总条数
+    private int total;
+    //页中查询后的内容
+    private Object object;
 
-    public int getPageNumber() {
-        return pageNumber;
-    }
-
-    public void setPageNumber(int pageNumber) {
-        this.pageNumber = pageNumber;
-    }
-
-    public int getPageSize() {
-        return pageSize;
-    }
-
-    public void setPageSize(int pageSize) {
-        this.pageSize = pageSize;
-    }
-
-    public int getStart() {
-        return start;
-    }
-
-    public void setStart(int start) {
-        this.start = start;
-    }
-
-    public int getRows() {
-        return rows;
-    }
-
-    public void setRows(int rows) {
-        this.rows = rows;
-    }
 }

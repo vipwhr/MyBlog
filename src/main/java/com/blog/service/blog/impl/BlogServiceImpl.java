@@ -19,7 +19,7 @@ public class BlogServiceImpl implements BlogService {
         param.setStart((pageNumber-1)*pageSize);
         param.setRows(pageSize);
         param.setTitle(title);
-        return blogDao.getBlog(param);
+        return blogDao.page(param);
     }
 
     @Override
