@@ -20,4 +20,11 @@ public interface BlogDao {
      * @return
      */
     BlogEntity getBlogById(BlogEntity param);
+
+    /**
+     * 新建文章内容
+     * @param param
+     * @return
+     */
+    int insertBlog(BlogEntity param);
 }

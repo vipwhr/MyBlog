@@ -22,4 +22,11 @@ public interface BlogService {
      */
     BlogEntity getBlogById(int blogId);
 
+    /**
+     * 新建文章内容
+     * @param param
+     * @return
+     */
+    int insertBlog(BlogEntity param);
+
 }

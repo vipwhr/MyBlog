@@ -44,4 +44,27 @@
 
     </select>
 
+    <insert id="insertBlog" parameterType="com.blog.entity.blog.BlogEntity">
+    INSERT INTO blog_article (
+        `title`,
+        `foreword`,
+        `content`,
+        `ctime`,
+        `creater`,
+        `mtime`,
+        `updater`,
+        `isvalid`
+    )
+    VALUES
+        (
+            #{title},
+            #{foreword},
+            #{content},
+            now(),
+            1,
+            now(),
+            1,
+            1
+        );
+    </insert>
 </mapper>

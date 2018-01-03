@@ -1,6 +1,5 @@
 package com.blog.controller;
 
-import com.blog.annotation.TestAnnotation;
 import com.blog.entity.system.User;
 import com.blog.service.system.UserService;
 import com.blog.utils.JsonResult;
@@ -37,7 +36,6 @@ public class HelloController {
 
     @RequestMapping("/testano")
     @ResponseBody
-    @TestAnnotation
     public String testano(String test){
         return "test"+test;
     }

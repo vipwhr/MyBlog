@@ -28,4 +28,9 @@ public class BlogServiceImpl implements BlogService {
         param.setId(blogId);
         return blogDao.getBlogById(param);
     }
+
+    @Override
+    public int insertBlog(BlogEntity param) {
+        return blogDao.insertBlog(param);
+    }
 }

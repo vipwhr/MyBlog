@@ -38,10 +38,31 @@ public class BlogController {
         return "blog/article";
     }
 
+    /**
+     * 添加文章的页面
+     * @return
+     */
+    @RequestMapping(value = "/addBlog",method = RequestMethod.GET)
+    public String addBlog(){
+        return "blog/edit_article";
+    }
+
+    /**
+     * 添加文章的操作
+     * @return
+     */
+    @RequestMapping(value = "/doAddBlog",method = RequestMethod.POST)
+    public String doAddBlog(BlogEntity blogEntity){
+        if(blogService.insertBlog(blogEntity) > 0){
+            return String.valueOf(new JsonResult(Constant.SUCCESS,"success",blogEntity));
+        }else{
+            return String.valueOf(new JsonResult(Constant.FAIL,"fail",null));
+        }
+    }
 
     @RequestMapping(value = "/addComment",method = RequestMethod.POST)
     @ResponseBody
-    public JsonResult addComment(BlogComment blogComment){
+    public JsonResult doAddComment(BlogComment blogComment){
         int commentId = blogCommentService.addBlogComment(blogComment);
         if(commentId > 0){
             return new JsonResult(Constant.FAIL,"OK",null);
