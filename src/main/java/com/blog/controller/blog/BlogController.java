@@ -52,6 +52,7 @@ public class BlogController {
      * @return
      */
     @RequestMapping(value = "/doAddBlog",method = RequestMethod.POST)
+    @ResponseBody
     public String doAddBlog(BlogEntity blogEntity){
         if(blogService.insertBlog(blogEntity) > 0){
             return String.valueOf(new JsonResult(Constant.SUCCESS,"success",blogEntity));
