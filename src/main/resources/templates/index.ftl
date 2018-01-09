@@ -14,7 +14,7 @@
 <body>
 <!--#include file="header.ftl" -->
 <#include "header.ftl">
-<div class="container">
+<div class="container" style="margin-bottom: 80px">
     <div class="row"></div>
     <div class="row"></div>
     <div class="row">
@@ -71,12 +71,6 @@
 </div>
 <#include "footer.ftl">
 <script type="text/javascript" src="${request.contextPath}/project/Pager.js"></script>
-<script>
-    var data = {
-        pageNumber: 1,
-        pageSize:5
-    }
-    DrawPage("${request.contextPath}/blog/page","blogsArea",JSON.stringify(data));
-</script>
+<script type="text/javascript" src="${request.contextPath}/project/blog/index.js"></script>
 </body>
 </html>
